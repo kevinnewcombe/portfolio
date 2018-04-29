@@ -1,0 +1,116 @@
+/* 
+	Commonly used SCSS variables 
+	used throughout the site.
+*/
+/*
+ *
+ *  colors 
+ *  names via http://chir.ag/projects/name-that-color/
+ *
+ *  note: For reference when adding names, please add a short description of 
+ *  where they're commonly being used 
+ *  
+*/
+html {
+  box-sizing: border-box;
+  font-family: 'Work Sans',sans-serif;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  padding: 0;
+  margin: 0 auto;
+  display: grid;
+}
+
+/* 
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+*/
+p a {
+  color: #154B9B;
+  text-decoration: none;
+}
+
+h2 {
+  line-height: 1.25;
+}
+
+h2:first-child {
+  margin-top: 0;
+}
+
+header {
+  display: flex;
+}
+
+header > div {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.name-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+#logo-kn {
+  width: 100%;
+  height: auto;
+}
+
+.envelope-icon {
+  width: 40px;
+  height: auto;
+}
+
+.icons-container {
+  flex: 1;
+  margin: 0 0 0 20px;
+}
+
+.icons-container a {
+  text-decoration: none;
+  display: inline-block;
+  margin: 0;
+  font-size: 0;
+}
+
+a.email-link {
+  margin-right: 20px;
+}
+a.email-link:hover .top-flap-animated {
+  transform: rotateX(180deg);
+}
+
+.codepen-logo {
+  width: 30px;
+  height: 30px;
+}
+
+.inner-box, .outer-ring {
+  fill: #000;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,24 @@
+<!doctype html>
+<head>
+    <title>Kevin Newcombe</title>
+    <meta name="description" content="Front-end developer based in Edmonton, Canada" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:500,600" rel="stylesheet">
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="name-container">
+        {{ readFile "/themes/kevinnewcombe/source/images/kevinnewcombe.svg" | safeHTML }} 
+      </div>
+      <div class="icons-container">
+        <a href="mailto:&#107;&#101;&#118;&#105;&#110;&#064;&#110;&#101;&#119;&#099;&#111;&#109;&#098;&#101;&#046;&#119;&#111;&#114;&#107;"class="email-link">{{ readFile "/themes/kevinnewcombe/source/images/mail.svg" | safeHTML }} </a>  
+        <a href="http://codepen.io/kevinnewcombe/" class="codepen-link" target="_blank">{{ readFile "/themes/kevinnewcombe/source/images/codepen.svg" | safeHTML }}<svg class="codepen-logo"> <use xlink:href="#codepen-logo"></use> </svg> </a> </span>        
+      </div>
+    </header>
+  </div>
+</body>
+
+</html>

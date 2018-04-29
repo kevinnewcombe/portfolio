@@ -1,0 +1,22 @@
+html{
+  box-sizing:border-box;
+  font-family:'Work Sans',sans-serif;
+  color:#fff;
+  padding:10px;
+  text-align:center;
+  box-sizing: border-box;
+}
+body{
+  margin:0;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.container {
+  width:100%;
+  max-width:1000px;
+  padding:0;
+  margin:0 auto;
+  display: grid;
+}
