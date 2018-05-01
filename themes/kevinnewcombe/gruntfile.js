@@ -20,11 +20,48 @@ module.exports = function(grunt) {
     /*     images     */
     /*                */
     /* ************** */
+    responsive_images: {
+      resize: {
+        options: {
+          sizes: [{
+              width: 300
+            },{
+              width: 400
+            },{
+              width: 500
+            },{
+              width: 600
+            },{
+              width: 700
+            },{
+              width: 800
+            },{
+              width: 900
+            },{
+              width: 1000
+            },{
+              width: 1100
+            },{
+              width: 1200
+            }
+          ],
+          quality: 100
+       },
+       files: [{
+         expand: true,
+         src: ['**/*.{jpg,gif,png}'],
+         cwd: 'source/images/projects/originals/',
+         custom_dest: 'source/images/projects/{%= width %}/{%= path %}'
+       }]
+     }
+   },
+
+
     imagemin: {
       dynamic: { 
         files: [{
           expand: true,
-          cwd: 'source/images/', 
+          cwd: 'source/images', 
           src: ['**/*.{png,jpg,gif}'], 
           dest: 'static/images/' // rebrand files
         }]
@@ -183,6 +220,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-responsive-images');
   grunt.loadNpmTasks('grunt-cwebp');
 
   grunt.loadNpmTasks('grunt-svgmin');
@@ -190,6 +228,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // grunt tasks
-  grunt.registerTask('images', ['imagemin', 'svgmin', 'cwebp', 'compress:svg']);
+  grunt.registerTask('images', ['responsive_images', 'imagemin', 'svgmin', 'cwebp', 'compress:svg']);
   grunt.registerTask('default', [ 'sass', 'compress', 'images', 'watch']);
 };

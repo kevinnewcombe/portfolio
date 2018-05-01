@@ -15,7 +15,7 @@ html {
   box-sizing: border-box;
   font-family: 'Work Sans',sans-serif;
   color: #000;
-  padding: 1.25rem 10px;
+  padding: 5rem 10px;
   text-align: center;
   box-sizing: border-box;
 }
@@ -30,7 +30,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   padding: 0;
   margin: 0 auto;
   display: grid;
@@ -41,7 +41,22 @@ h1 {
   font-size: 25px;
   font-size: 1.5625rem;
   font-weight: 200;
+  margin: 2.5rem 0;
+}
+
+h3 {
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: 200;
   margin: 0 0 1.25rem;
+  padding: 0;
+}
+
+p {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
 }
 
 /* 
@@ -122,7 +137,42 @@ a.email-link:hover .top-flap-animated {
 }
 
 article {
-  margin: 1.25rem 0 0 0;
+  margin: 0 0 0 0;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.project-link {
+  position: relative;
+}
+.project-link img {
+  width: 100%;
+  height: auto;
+  display: block;
+  float: left;
+}
+.project-link .overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  bottom: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.25s opacity;
+  will-change: opacity;
+  width: 100%;
+  color: #fff;
+  text-decoration: none;
+}
+.project-link:hover .overlay {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

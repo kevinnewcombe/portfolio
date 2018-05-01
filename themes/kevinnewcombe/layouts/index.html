@@ -4,14 +4,14 @@
     <meta name="description" content="Front-end developer based in Edmonton, Canada" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600" rel="stylesheet">
-    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
+    <link rel="stylesheet" href="css/style.css?{{ now.Unix }}" />
 </head>
 
 <body>
   <div class="container">
     <header>
       <div class="name-container">
-        {{ readFile "themes/kevinnewcombe/source/images/kevinnewcombe.svg" | safeHTML }} 
+        <!-- {{ readFile "themes/kevinnewcombe/source/images/kevinnewcombe.svg" | safeHTML }}  -->
         <!-- <p>Front-End developer</p> -->
       </div>
       <div class="icons-container">
@@ -22,15 +22,26 @@
 
     <article>
       <h1>Recent Work</h1>
-      <!-- {{ .Params.projects }} -->
+      <div class="projects">
       {{ range $ind, $ele := .Params.projects }}
-        <p>
-          {{ $ele.title }}<br />{{ $ele.description | safeHTML }}<br />
-          {{ range $ind, $tag := $ele.tags }}
-            {{ $tag }} | 
-          {{ end }}
-        </p>
+        <a href="{{ $ele.url }}" class="project-link" title="{{ $ele.title }}">
+          <!-- <img src="images/projects/originals/{{ $ele.img_src }}.jpg" alt="{{ $ele.title }}"/> -->
+          <div class="overlay">
+            <!-- <h3>{{ $ele.title }}</h3> -->
+            {{ $srcset := ""}}
+            {{ range $i, $sequence :=  (seq 10) }}
+            {{ add (mul $i 100) 300 }}
+            {{ end }}
+
+            srcset: {{ $srcset }} 
+           <!--  <p>
+              {{ $ele.launch_date }}<br />
+              {{ $ele.technology }}
+            </p> -->
+          </div>
+        </a>
       {{ end }}
+      </div><!-- /.projects -->
     </article>
   </div>
 </body>
