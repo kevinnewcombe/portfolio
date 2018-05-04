@@ -6,11 +6,12 @@ header{
 header > div{
   display: flex;
   align-items: flex-end;
-  justify-content: flex-end;
 }
 .name-container{
   width:100%;
   max-width:400px;
+   display: flex;
+  flex-direction: column;
 }
 #logo-kn{
   width:100%;
@@ -25,7 +26,9 @@ header > div{
 .icons-container{
   flex:1;
   margin:0 0 0 20px;
+  justify-content: flex-end;
 }
+
 .icons-container a{
   text-decoration:none;
   display:inline-block;

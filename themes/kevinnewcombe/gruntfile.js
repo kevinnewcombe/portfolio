@@ -10,7 +10,7 @@ module.exports = function(grunt) {
         },
         options: {
           sourcemap: 'none',
-          style: 'expanded' // nested, compact, compressed, expanded
+          style: 'compressed' // nested, compact, compressed, expanded
         }
       }
     },

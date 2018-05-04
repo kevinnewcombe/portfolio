@@ -4,6 +4,7 @@
     <meta name="description" content="Front-end developer based in Edmonton, Canada" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="css/style.css?{{ now.Unix }}" />
 </head>
 
@@ -12,7 +13,7 @@
     <header>
       <div class="name-container">
         {{ readFile "themes/kevinnewcombe/source/images/kevinnewcombe.svg" | safeHTML }} 
-        <!-- <p>Front-End developer</p> -->
+        <p>Front-End developer based in Edmonton, Canada</p>
       </div>
       <div class="icons-container">
         <a href="mailto:&#107;&#101;&#118;&#105;&#110;&#064;&#110;&#101;&#119;&#099;&#111;&#109;&#098;&#101;&#046;&#119;&#111;&#114;&#107;"class="email-link">{{ readFile "/themes/kevinnewcombe/source/images/mail.svg" | safeHTML }} </a>  
@@ -25,17 +26,10 @@
       <div class="projects">
       {{ range $ind, $ele := .Params.projects }}
         <a href="{{ $ele.url }}" class="project-link" title="{{ $ele.title }}">
-          <img src="images/projects/originals/{{ $ele.img_src }}.jpg" alt="{{ $ele.title }}"/>
+          <img srcset="{{ range $i, $sequence :=  (seq 10) }}images/projects/{{ add (mul $i 100) 300 }}/{{ $ele.img_src }}.jpg {{ add (mul $i 100) 300 }}w{{ if lt $i 9 }},{{end}}{{ end }}"src="images/projects/originals/{{ $ele.img_src }}.jpg" alt="{{ $ele.title }}"/>
           <div class="overlay">
             <h3>{{ $ele.title }}</h3>
-            <!-- 
-            {{ $srcset := ""}}
-            {{ range $i, $sequence :=  (seq 10) }}
-            {{ add (mul $i 100) 300 }}
-            {{ end }}
-
-            srcset: {{ $srcset }} 
-            -->
+      
             <p>
               {{ $ele.launch_date }}<br />
               {{ $ele.technology }}
@@ -46,6 +40,14 @@
       </div><!-- /.projects -->
     </article>
   </div>
-</body>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91360405-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'UA-91360405-1');
+  </script>
+</body>
 </html>
