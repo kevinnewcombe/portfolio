@@ -11,7 +11,7 @@
   <div class="container">
     <header>
       <div class="name-container">
-        <!-- {{ readFile "themes/kevinnewcombe/source/images/kevinnewcombe.svg" | safeHTML }}  -->
+        {{ readFile "themes/kevinnewcombe/source/images/kevinnewcombe.svg" | safeHTML }} 
         <!-- <p>Front-End developer</p> -->
       </div>
       <div class="icons-container">
@@ -25,19 +25,21 @@
       <div class="projects">
       {{ range $ind, $ele := .Params.projects }}
         <a href="{{ $ele.url }}" class="project-link" title="{{ $ele.title }}">
-          <!-- <img src="images/projects/originals/{{ $ele.img_src }}.jpg" alt="{{ $ele.title }}"/> -->
+          <img src="images/projects/originals/{{ $ele.img_src }}.jpg" alt="{{ $ele.title }}"/>
           <div class="overlay">
-            <!-- <h3>{{ $ele.title }}</h3> -->
+            <h3>{{ $ele.title }}</h3>
+            <!-- 
             {{ $srcset := ""}}
             {{ range $i, $sequence :=  (seq 10) }}
             {{ add (mul $i 100) 300 }}
             {{ end }}
 
             srcset: {{ $srcset }} 
-           <!--  <p>
+            -->
+            <p>
               {{ $ele.launch_date }}<br />
               {{ $ele.technology }}
-            </p> -->
+            </p>
           </div>
         </a>
       {{ end }}
