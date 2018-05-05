@@ -3,7 +3,9 @@
     <title>Kevin Newcombe</title>
     <meta name="description" content="Front-end developer based in Edmonton, Canada" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <!-- 
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600" rel="stylesheet">
+  -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="css/style.css?{{ now.Unix }}" />
 </head>
@@ -13,7 +15,7 @@
     <header>
       <div class="name-container">
         {{ readFile "themes/kevinnewcombe/source/images/kevinnewcombe.svg" | safeHTML }} 
-        <p>Front-End developer based in Edmonton, Canada</p>
+        <p>Front-end developer based in Edmonton, Canada</p>
       </div>
       <div class="icons-container">
         <a href="mailto:&#107;&#101;&#118;&#105;&#110;&#064;&#110;&#101;&#119;&#099;&#111;&#109;&#098;&#101;&#046;&#119;&#111;&#114;&#107;"class="email-link">{{ readFile "/themes/kevinnewcombe/source/images/mail.svg" | safeHTML }} </a>  
@@ -22,24 +24,30 @@
     </header>
 
     <article>
-      <h1>Recent Work</h1>
+      <h1>Personal Work</h1>
       <div class="projects">
       {{ range $ind, $ele := .Params.projects }}
-        <a href="{{ $ele.url }}" class="project-link" title="{{ $ele.title }}">
-          <img srcset="{{ range $i, $sequence :=  (seq 10) }}images/projects/{{ add (mul $i 100) 300 }}/{{ $ele.img_src }}.jpg {{ add (mul $i 100) 300 }}w{{ if lt $i 9 }},{{end}}{{ end }}"src="images/projects/originals/{{ $ele.img_src }}.jpg" alt="{{ $ele.title }}"/>
-          <div class="overlay">
-            <h3>{{ $ele.title }}</h3>
-      
-            <p>
-              {{ $ele.launch_date }}<br />
-              {{ $ele.technology }}
-            </p>
-          </div>
-        </a>
+        <div class="project">
+          <a href="{{ $ele.url }}" title="{{ $ele.title }}">
+            <img srcset="{{ range $i, $sequence :=  (seq 10) }}images/projects/{{ add (mul $i 100) 300 }}/{{ $ele.img_src }}.jpg {{ add (mul $i 100) 300 }}w{{ if lt $i 9 }},{{end}}{{ end }}"src="images/projects/originals/{{ $ele.img_src }}.jpg" alt="{{ $ele.title }}" /></a>
+           <h3><a href="{{ $ele.url }}" title="{{ $ele.title }}">{{ $ele.title }}</a></h3>
+           <p>{{ $ele.technology }}</p>
+        </div>
       {{ end }}
       </div><!-- /.projects -->
     </article>
   </div>
+  <!-- 
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+   WebFont.load({
+      google: {
+        families: ['Work+Sans:300,400,500,600']
+      }
+    });
+  </script>
+  -->
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91360405-1"></script>
   <script>
@@ -49,5 +57,6 @@
 
     gtag('config', 'UA-91360405-1');
   </script>
+
 </body>
 </html>

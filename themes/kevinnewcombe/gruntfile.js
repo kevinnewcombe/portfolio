@@ -124,6 +124,17 @@ module.exports = function(grunt) {
       }, 
     },
     */
+    htmlmin: {                                     // Task
+      dist: {                                      // Target
+        options: {                                 // Target options
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        files: {                                   // Dictionary of files
+          '../../public/index.html': '../../public/index.min.html',     // 'destination': 'source'
+        }
+      }        
+    },
 
     compress: {
       svg: 
@@ -225,6 +236,8 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-svgmin');
   grunt.loadNpmTasks('grunt-contrib-compress');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // grunt tasks
