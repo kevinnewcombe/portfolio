@@ -6,7 +6,9 @@ module.exports = function(grunt) {
     sass: { // https://github.com/gruntjs/grunt-contrib-sass
       dist: {
         files: {
-          'static/css/style.css': 'source/css/style.scss'
+          'static/css/style.css': 'source/css/style.scss',
+          'layouts/style.mmark': 'source/css/style.scss'
+
         },
         options: {
           sourcemap: 'none',
