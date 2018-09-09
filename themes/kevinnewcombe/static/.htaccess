@@ -65,7 +65,7 @@ AddEncoding gzip svgz
     AddType audio/ogg                                   oga ogg opus
     AddType image/bmp                                   bmp
     AddType image/svg+xml                               svg svgz
-    # AddType image/webp                                  webp
+    AddType image/webp                                  webp
     AddType video/mp4                                   f4v f4p m4v mp4
     AddType video/ogg                                   ogv
     AddType video/webm                                  webm
@@ -569,23 +569,19 @@ FileETag None
 
 <IfModule mod_rewrite.c>
 
-  RewriteEngine On
-
-  # Check if browser support WebP images
-  RewriteCond %{HTTP_ACCEPT} image/webp
-
-  # Check if WebP replacement image exists
-  RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
-
-  # Serve WebP image instead
-  RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
-
+RewriteEngine On
+RewriteCond %{HTTP:Accept} image/webp [NC]
+RewriteCond %{HTTP:Content-Disposition} !attachment [NC]
+RewriteCond %{DOCUMENT_ROOT}/$1.webp -f [NC]
+RewriteRule (.+)\.(png|jpe?g|gif)$ $1.webp [T=image/webp,L]
 </IfModule>
 
 <IfModule mod_headers.c>
+  Header append Vary Accept env=REDIRECT_accept
+</IfModule>
 
-    Header append Vary Accept env=REDIRECT_accept
-
+<IfModule mod_mime.c>
+  AddType image/webp .webp
 </IfModule>
 
 AddType  image/webp .webp

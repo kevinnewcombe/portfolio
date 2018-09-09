@@ -28,11 +28,11 @@ projects :
     url : https://threeb8.herokuapp.com/
     launch_date: April 2018
     technology: three.js, sockets.io
-  - title : Alphanumeric
-    img_src : alphanumeric
-    url : https://codepen.io/kevinnewcombe/pen/vZbOPR
-    launch_date: July 2017
-    technology: three.js
+  - title : Flip Menu
+    img_src : flipnav
+    url : https://codepen.io/kevinnewcombe/pen/QBoywm
+    launch_date: August 2018
+    technology: three.js, css
   - title : Preloader Concept
     img_src : preloader
     url : https://codepen.io/kevinnewcombe/pen/qmaWgO

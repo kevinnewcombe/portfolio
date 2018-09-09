@@ -29,7 +29,7 @@
       {{ range $ind, $ele := .Params.projects }}
         <div class="project">
           <a href="{{ $ele.url }}" title="{{ $ele.title }}">
-            <img srcset="{{ range $i, $sequence :=  (seq 10) }}images/projects/{{ add (mul $i 100) 300 }}/{{ $ele.img_src }}.jpg {{ add (mul $i 100) 300 }}w{{ if lt $i 9 }},{{end}}{{ end }}"src="images/projects/originals/{{ $ele.img_src }}.jpg" alt="{{ $ele.title }}" /></a>
+            <img srcset="{{ range $i, $sequence :=  (seq 10) }}images/projects/{{ add (mul $i 100) 300 }}/{{ $ele.img_src }}.jpg {{ add (mul $i 100) 300 }}w{{ if lt $i 9 }},{{end}}{{ end }}"src="images/projects/originals/{{ $ele.img_src }}.jpg" sizes="(min-width:768px) 50vw, 100vw" alt="{{ $ele.title }}" /></a>
            <h3><a href="{{ $ele.url }}" title="{{ $ele.title }}">{{ $ele.title }}</a></h3>
            <p>{{ $ele.technology }}</p>
         </div>
@@ -37,17 +37,6 @@
       </div><!-- /.projects -->
     </article>
   </div>
-  <!-- 
-  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
-  <script>
-   WebFont.load({
-      google: {
-        families: ['Work+Sans:300,400,500,600']
-      }
-    });
-  </script>
-  -->
-
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91360405-1"></script>
   <script>
