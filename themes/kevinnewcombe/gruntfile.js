@@ -11,7 +11,6 @@ module.exports = function(grunt) {
 
         },
         options: {
-          sourcemap: 'none',
           style: 'compressed' // nested, compact, compressed, expanded
         }
       }
