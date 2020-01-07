@@ -1,52 +1,35 @@
 <!doctype html>
 <head>
     <title>Kevin Newcombe</title>
-    <meta name="description" content="Front-end developer based in Edmonton, Canada" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600" rel="stylesheet">
       <style type="text/css">
-        {{ readFile "themes/kevinnewcombe/static/css/style.css" | safeCSS }} 
-        </style>
+      html,body{
+        height:100%;
+      }
+      body{
+        font-family:'Courier New', mono;
+        font-size:16px;
+        color:#111;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      p{
+        font-size:0.8rem;
+        text-align:center;
+      }
+      a{
+        color:#1a76bf;
+        transition:0.125s all;
+        text-decoration:none;
+      }
+      a:hover{
+        color:#145b94;
+      }
+    </style>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
 </head>
 
 <body>
-  <div class="container">
-    <header>
-      <div class="name-container">
-        {{ readFile "themes/kevinnewcombe/source/images/kevinnewcombe.svg" | safeHTML }} 
-        <p>Front-end developer based in Edmonton, Canada</p>
-      </div>
-      <div class="icons-container">
-        <a href='m&#97;&#105;lto&#58;k&#101;%76%&#54;9n&#64;%6B&#101;&#118;&#37;&#54;9n-%&#54;E&#37;65%77&#99;om&#37;&#54;2%6&#53;&#46;com' class="email-link">{{ readFile "/themes/kevinnewcombe/source/images/mail.svg" | safeHTML }} </a>  
-        <a href="http://codepen.io/kevinnewcombe/" class="codepen-link" target="_blank">{{ readFile "/themes/kevinnewcombe/source/images/codepen.svg" | safeHTML }}<svg class="codepen-logo"> <use xlink:href="#codepen-logo"></use> </svg> </a> </span>        
-      </div>
-    </header>
-
-    <article>
-      <h1>Personal Work</h1>
-      <div class="projects">
-      {{ range $ind, $ele := .Params.projects }}
-        <div class="project">
-          <a href="{{ $ele.url }}" title="{{ $ele.title }}">
-            <img srcset="{{ range $i, $sequence :=  (seq 10) }}images/projects/{{ add (mul $i 100) 300 }}/{{ $ele.img_src }}.jpg {{ add (mul $i 100) 300 }}w{{ if lt $i 9 }},{{end}}{{ end }}"src="images/projects/originals/{{ $ele.img_src }}.jpg" sizes="(min-width:768px) 50vw, 100vw" alt="{{ $ele.title }}" /></a>
-           <h3><a href="{{ $ele.url }}" title="{{ $ele.title }}">{{ $ele.title }}</a></h3>
-           <p>{{ $ele.technology }}</p>
-        </div>
-      {{ end }}
-      </div><!-- /.projects -->
-    </article>
-  </div>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91360405-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-91360405-1');
-  </script>
-
+  <p>kevin newcombe | <a href="mailto:kevinjnewcombe@gmail.com">kevinjnewcombe@gmail.com</a></p>
 </body>
 </html>
