@@ -16,27 +16,39 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
       p{
-        font-size:0.9rem;
+        font-size:1.1rem;
         text-align:center;
       }
       a{
-        color:#1a76bf;
+        color:#145b94;
         transition:0.125s all;
         text-decoration:none;
       }
       a:hover{
-        color:#145b94;
+        color:#082f4f;
+      }
+      @media (prefers-color-scheme: dark) {
+        body{
+          background:#292929;
+        }
+        a{
+         color:#95d0ff; 
+        }
+        a:hover{
+          color:#2ba1ff;
+        }
       }
     </style>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
 </head>
 
 <body>
-  <a href="mailto:kevinjnewcombe@gmail.com">say hello.</a>
+  <p>
+    <a href="mailto:kevinjnewcombe@gmail.com">say hello.</a>
+  </p>
 </body>
 </html>
