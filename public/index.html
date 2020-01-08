@@ -1,40 +1,56 @@
 <!doctype html>
+<html lang="en" dir="ltr">
 <head>
+  <meta charset="utf-8">
   <meta name="robots" content="noindex" />
-    <title>Kevin Newcombe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Kevin Newcombe</title>
       <style type="text/css">
       html,body{
         height:100%;
       }
       body{
+        margin:0;
         font-family:'Courier New', mono;
         font-size:16px;
-        color:#111;
         display: flex;
         align-items: center;
         justify-content: center;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
       p{
-        font-size:0.8rem;
+        font-size:1.1rem;
         text-align:center;
       }
       a{
-        color:#1a76bf;
+        color:#145b94;
         transition:0.125s all;
         text-decoration:none;
       }
       a:hover{
-        color:#145b94;
+        color:#082f4f;
+      }
+      @media (prefers-color-scheme: dark) {
+        body{
+          background:#292929;
+        }
+        a{
+         color:#95d0ff; 
+        }
+        a:hover{
+          color:#2ba1ff;
+        }
       }
     </style>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
 </head>
 
 <body>
-  <p>kevin newcombe<br />
-    <a href="https://codepen.io/kevinnewcombe">codepen</a>
-     |
-    <a href="mailto:kevinjnewcombe@gmail.com">kevinjnewcombe@gmail.com</a>
+  <p>
+    newcombe.work<br />
+    offline for now but you can still 
+    <a href="mailto:kevinjnewcombe@gmail.com">email me</a> if that's your thing.
   </p>
 </body>
 </html>
