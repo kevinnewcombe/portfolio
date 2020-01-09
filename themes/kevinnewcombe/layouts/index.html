@@ -607,10 +607,9 @@ ollllooooollllooollllooddddddxxkkkkkkkkxoodkxddxxxxxdddddxxxddodooooddxxxdddxxxd
 let currentFrame = 0;
 let timerID = setInterval(() => tick(), 100);
 let tick = () => {
-  let f = a[currentFrame];
   console.clear();
-  console.log("%c"+f, "background-color:#000; color:#fff; font-size:6px; line-height:8px;display:block;");
-
+ console.log("%c"+a[currentFrame], "background-color:#000; color:#fff; font-size:10px; line-height:10px; display:inline-block;");
+//  console.log(a[currentFrame])
   if(currentFrame < a.length - 1){
     currentFrame++;
   }else{
