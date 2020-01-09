@@ -609,7 +609,7 @@ let timerID = setInterval(() => tick(), 100);
 let tick = () => {
   let f = a[currentFrame];
   console.clear();
-  console.log("%c"+f, "background-color:#000; color:#fff; font-size:6px; line-height:8px; padding:0; margin:0; display:block; border:none");
+  console.log("%c"+f, "background-color:#000; color:#fff; font-size:6px; line-height:8px;display:block;");
 
   if(currentFrame < a.length - 1){
     currentFrame++;
