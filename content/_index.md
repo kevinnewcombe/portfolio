@@ -13,11 +13,6 @@ projects :
     url : https://codepen.io/kevinnewcombe/pen/axVVqK
     launch_date: April 2019
     technology: CSS
-  # - title : BB-8
-  #   img_src : bb8
-  #   url : https://threeb8.herokuapp.com/
-  #   launch_date: April 2018
-  #   technology: three.js, sockets.io
   - title : Elevation Map
     img_src : elevation
     url : https://codepen.io/kevinnewcombe/pen/XMVoKv
