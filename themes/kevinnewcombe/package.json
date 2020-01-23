@@ -16,6 +16,7 @@
     "webp-bin": "^0.1.4"
   },
   "dependencies": {
+    "grunt-contrib-uglify-es": "github:gruntjs/grunt-contrib-uglify#harmony",
     "imagemin": "^5.3.1",
     "imagemin-webp": "^4.0.0"
   }

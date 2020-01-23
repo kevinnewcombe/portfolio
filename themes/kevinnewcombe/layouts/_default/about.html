@@ -1,35 +1,9 @@
-<!doctype html>
-<head>
-    <title>Kevin Newcombe</title>
-    <meta name="description" content="Front-end developer based in Edmonton, Canada" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600" rel="stylesheet">
-      <style type="text/css">
-        {{ readFile "themes/kevinnewcombe/static/css/style.css" | safeCSS }} 
-        </style>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
-</head>
-
-<body>
-  <div class="container">
-      <header>
-      <div class="name-container">
-        {{ readFile "themes/kevinnewcombe/source/images/kevinnewcombe.svg" | safeHTML }} 
-        <p>Front-end developer based in Edmonton, Canada</p>
-      </div>
-      <div class="icons-container">
-        <a href='m&#97;&#105;lto&#58;k&#101;%76%&#54;9n&#64;%6B&#101;&#118;&#37;&#54;9n-%&#54;E&#37;65%77&#99;om&#37;&#54;2%6&#53;&#46;com' class="email-link">{{ readFile "/themes/kevinnewcombe/source/images/mail.svg" | safeHTML }} </a>  
-        <a href="http://codepen.io/kevinnewcombe/" class="codepen-link" target="_blank">{{ readFile "/themes/kevinnewcombe/source/images/codepen.svg" | safeHTML }}<svg class="codepen-logo"> <use xlink:href="#codepen-logo"></use> </svg> </a> </span>        
-      </div>
-    </header>
-
+{{ partial "header.html" . }}
     <article>
       <h2>About</h2>
       {{ $daily := getJSON "http://kn-port-endpoint.herokuapp.com/daily" }}
 
       Currently Reading: <a href="{{ $daily.goodreads.link }}">{{ $daily.goodreads.title }} by
         {{ $daily.goodreads.author }}</a>
-    </div>
-  </div>
-</body>
+    </article>
+{{ partial "footer.html" . }}

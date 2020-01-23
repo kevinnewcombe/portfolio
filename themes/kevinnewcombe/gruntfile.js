@@ -6,12 +6,21 @@ module.exports = function(grunt) {
     sass: { // https://github.com/gruntjs/grunt-contrib-sass
       dist: {
         files: {
-          'static/css/style.css': 'source/css/style.scss',
-          'layouts/style.mmark': 'source/css/style.scss'
-
+          'static/css/style.css': 'source/css/style.scss'
         },
         options: {
           style: 'compressed' // nested, compact, compressed, expanded
+        }
+      }
+    },
+
+    uglify: {
+      options: {
+        mangle: false
+      },
+      my_target: {
+        files: {
+          'static/js/app.js': ['source/js/app/app.js']
         }
       }
     },
@@ -202,6 +211,13 @@ module.exports = function(grunt) {
           spawn: false
         }
       },
+      js: {
+        files: ['source/js/**/*.js'],
+        tasks: ['uglify'],
+        options: {
+          spawn: false
+        }
+      },
       /* 
       scripts: {
         files: ['source/js/app/*.js', 'source/js/libs/*.js','source/js/plugins/*.js', 'source/js/fka/*.js'],
@@ -241,7 +257,9 @@ module.exports = function(grunt) {
   
   grunt.loadNpmTasks('grunt-contrib-watch');
 
+  grunt.loadNpmTasks('grunt-contrib-uglify-es');
+
   // grunt tasks
   grunt.registerTask('images', ['responsive_images', 'imagemin', 'svgmin', 'cwebp', 'compress:svg']);
-  grunt.registerTask('default', [ 'sass', 'compress', 'images', 'watch']);
+  grunt.registerTask('default', [ 'sass', 'uglify', 'compress', 'images', 'watch']);
 };
