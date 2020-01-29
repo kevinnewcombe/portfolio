@@ -11,5 +11,54 @@
         </div>
       {{ end }}
       </div><!-- /.projects -->
-    </article>
+      <section>
+        <h1>Other Work</h1>
+        <p>
+          <a href="https://www.skillshare.com/classes/Build-an-Explorable-3D-Scene-with-Three.js/1275426279">Build an Explorable 3D Scene with Three.js on Skillshare</a><br />
+          <a href="https://codepen.io/kevinnewcombe/post/visualizing-elevation-data-with-three-js">Visualizing elevation data with three.js on CodePen</a>
+        </p>
+      </section>
+      <section>
+        <h1>About</h1>
+        <h4>Technology</h4>
+        <ul>
+          <li>CSS, SCSS</li>
+          <li>Vue.js, three.js</li>
+          <li>Hugo, node.js, php</li>
+        </ul>
+
+        <h4>Personal</h4>
+        {{ $daily := getJSON "http://kn-port-endpoint.herokuapp.com/daily" }}
+        <ul class="js-activity">
+          <li>Location: Edmonton, Canada</li>
+          <li>Currently reading: <a href="{{ $daily.goodreads.link }}">{{ $daily.goodreads.title }} by
+            {{ $daily.goodreads.author }}</a></li>
+        </ul>
+      </article>
+    </section>
+    <script>
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', 'http://kn-port-endpoint.herokuapp.com/realtime');
+      xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 400) {
+          let data = JSON.parse(xhr.responseText);
+          s = data.spotify;
+          li = document.createElement('li');
+          status = (s.currently_playing) ? "Currently listening to" : "Last song listened to on Spotify"
+          if(s.external_url){
+            wrapper = document.createElement('a');
+            wrapper.setAttribute('href', s.external_url);
+          }else{
+            wrapper = document.createElement('span');
+          }
+          wrapper.appendChild(document.createTextNode(s.track_name+' by '+s.artist));
+          li.appendChild(document.createTextNode(status+': '));
+          li.appendChild(wrapper);
+          document.querySelector('.js-activity').appendChild(li);
+          // document.querySelector('.js-activity').appendChild(document.createElement('li').appendChild(document.createTextNode('Blood type: Not sure')));
+        }
+      }
+      xhr.send();
+      console.log('hello')
+  </script>
 {{ partial "footer.html" . }}
