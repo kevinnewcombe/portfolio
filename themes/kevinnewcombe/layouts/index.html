@@ -5,7 +5,12 @@
       {{ range $ind, $ele := .Params.projects }}
         <div class="project">
           <a href="{{ $ele.url }}" title="{{ $ele.title }}">
-            <img srcset="{{ range $i, $sequence :=  (seq 10) }}images/projects/{{ add (mul $i 100) 300 }}/{{ $ele.img_src }}.jpg {{ add (mul $i 100) 300 }}w{{ if lt $i 9 }},{{end}}{{ end }}"src="images/projects/originals/{{ $ele.img_src }}.jpg" sizes="(min-width:768px) 50vw, 100vw" alt="{{ $ele.title }}" /></a>
+            <!-- 
+                sample url 
+                https://res.cloudinary.com/kevinnewcombe/image/upload/c_scale,f_auto,w_2110/v1580074421/flipnav_coan6z.jpg
+            -->
+
+            <img srcset="{{ range $i, $sequence :=  (seq 10) }} https://res.cloudinary.com/kevinnewcombe/image/upload/c_scale,f_auto,w_{{ add (mul $i 100) 300 }}/v1580074421/{{ $ele.img_src }}.jpg {{ add (mul $i 100) 300 }}w{{ if lt $i 9 }},{{end}}{{ end }}"src="images/projects/originals/{{ $ele.img_src }}.jpg" sizes="(min-width:768px) 50vw, 100vw" alt="{{ $ele.title }}" /></a>
            <h3><a href="{{ $ele.url }}" title="{{ $ele.title }}">{{ $ele.title }}</a></h3>
            <p>{{ $ele.technology }}</p>
         </div>
