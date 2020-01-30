@@ -1,9 +1,1 @@
-{{ partial "header.html" . }}
-    <article>
-      <h2>About</h2>
-      {{ $daily := getJSON "http://kn-port-endpoint.herokuapp.com/daily" }}
-
-      Currently Reading: <a href="{{ $daily.goodreads.link }}">{{ $daily.goodreads.title }} by
-        {{ $daily.goodreads.author }}</a>
-    </article>
-{{ partial "footer.html" . }}
+this is about

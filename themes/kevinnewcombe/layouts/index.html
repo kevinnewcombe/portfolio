@@ -24,21 +24,14 @@
         </p>
       </section>
       <section>
-        <h1>About</h1>
-        <h4>Technology</h4>
-        <ul>
-          <li>CSS, SCSS</li>
-          <li>Vue.js, three.js</li>
-          <li>Hugo, node.js, php</li>
-        </ul>
 
-        <h4>Personal</h4>
         {{ $daily := getJSON "http://kn-port-endpoint.herokuapp.com/daily" }}
-        <ul class="js-activity">
-          <li>Location: Edmonton, Canada</li>
-          <li>Currently reading: <a href="{{ $daily.goodreads.link }}">{{ $daily.goodreads.title }} by
-            {{ $daily.goodreads.author }}</a></li>
-        </ul>
+        <h1>About</h1>
+
+        <p>Hi, my name's <em>Kevin Newcombe</em></p>
+        <p>I'm a front-end developer who builds with, among other things SCSS, Vue.js, three.js, Hugo, node.js and php (though not all the same time, obviously.)</p>
+        <p>I'm currently based in <em>Edmonton, Canada</em>. <span class="js-activity"></span> I'm also in the middle of reading <em><a href="{{ $daily.goodreads.link }}">{{ $daily.goodreads.title }}</a></em> by {{ $daily.goodreads.author }}, though not like, at this exact moment. </p>
+     
       </article>
     </section>
     <script>
@@ -48,19 +41,20 @@
         if (xhr.status >= 200 && xhr.status < 400) {
           let data = JSON.parse(xhr.responseText);
           s = data.spotify;
-          li = document.createElement('li');
-          status = (s.currently_playing) ? "Currently listening to" : "Last song listened to on Spotify"
+          
+          status = (s.currently_playing) ? "At the moment, I'm listening to" : "The last song listened to on Spotify was"
+          em = document.createElement('em');
           if(s.external_url){
             wrapper = document.createElement('a');
             wrapper.setAttribute('href', s.external_url);
           }else{
             wrapper = document.createElement('span');
           }
-          wrapper.appendChild(document.createTextNode(s.track_name+' by '+s.artist));
-          li.appendChild(document.createTextNode(status+': '));
-          li.appendChild(wrapper);
-          document.querySelector('.js-activity').appendChild(li);
-          // document.querySelector('.js-activity').appendChild(document.createElement('li').appendChild(document.createTextNode('Blood type: Not sure')));
+          em.appendChild(wrapper);
+          wrapper.appendChild(document.createTextNode(s.track_name));
+          document.querySelector('.js-activity').appendChild(document.createTextNode(status+' '));
+          document.querySelector('.js-activity').appendChild(em);
+          document.querySelector('.js-activity').appendChild(document.createTextNode(' by '+s.artist+'. '));
         }
       }
       xhr.send();
