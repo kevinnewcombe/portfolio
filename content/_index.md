@@ -13,11 +13,11 @@ projects :
     url : https://codepen.io/kevinnewcombe/pen/axVVqK
     launch_date: April 2019
     technology: CSS
-  - title : Drivable BB-8
-    img_src : bb8_ka8kil
-    url : https://threeb8.herokupapp.com
-    launch_date: April 2018
-    technology: three.js, node.js   
+  # - title : Drivable BB-8
+  #   img_src : bb8_ka8kil
+  #   url : https://threeb8.herokupapp.com
+  #   launch_date: April 2018
+  #   technology: three.js, node.js   
   - title : Elevation Map
     img_src : elevation_ncdjsf
     url : https://codepen.io/kevinnewcombe/pen/XMVoKv
