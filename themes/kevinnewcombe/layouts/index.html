@@ -23,7 +23,7 @@
           <a href="https://codepen.io/kevinnewcombe/post/visualizing-elevation-data-with-three-js">Visualizing elevation data with three.js on CodePen</a>
         </p>
       </section>
-      {{/*
+
       <section>
 
         {{ $daily := getJSON "http://kn-port-endpoint.herokuapp.com/daily" }}
@@ -44,7 +44,7 @@
           let data = JSON.parse(xhr.responseText);
           s = data.spotify;
           
-          status = (s.currently_playing) ? "At the moment, I'm listening to" : "The last song listened to on Spotify was"
+          status = (s.currently_playing) ? "At this exact moment, I'm listening to" : "The last song I listened to on Spotify was"
           em = document.createElement('em');
           if(s.external_url){
             wrapper = document.createElement('a');
@@ -60,8 +60,7 @@
         }
       }
       xhr.send();
-      console.log('hello')
+      console.log('no peeking')
   </script>
- */}}
   
 {{ partial "footer.html" . }}
