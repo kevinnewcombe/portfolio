@@ -24,43 +24,5 @@
         </p>
       </section>
 
-      <section>
-
-        {{ $daily := getJSON "http://kn-port-endpoint.herokuapp.com/daily" }}
-        <h1>About</h1>
-
-        <p>Hi, my name's <em>Kevin Newcombe</em>.</p>
-        <p>I'm a front-end developer who builds with, among other things: SCSS, Vue.js, three.js, Hugo, node.js and php (though not all the same time, obviously.)</p>
-        <p>I'm currently based in <em>Edmonton, Canada</em>. The last book I read was <em><a href="{{ $daily.goodreads.link }}">{{ $daily.goodreads.title }}</a></em> by {{ $daily.goodreads.author }}. <span class="js-activity"></span></p>
      
-      </article>
-    </section>
  
-    <script>
-      const xhr = new XMLHttpRequest();
-      xhr.open('GET', 'https://kn-port-endpoint.herokuapp.com/realtime');
-      xhr.onload = function() {
-        if (xhr.status >= 200 && xhr.status < 400) {
-          let data = JSON.parse(xhr.responseText);
-          s = data.spotify;
-          
-          status = (s.currently_playing) ? "At this exact moment, I'm listening to" : "The last song I listened to on Spotify was"
-          em = document.createElement('em');
-          if(s.external_url){
-            wrapper = document.createElement('a');
-            wrapper.setAttribute('href', s.external_url);
-          }else{
-            wrapper = document.createElement('span');
-          }
-          em.appendChild(wrapper);
-          wrapper.appendChild(document.createTextNode(s.track_name));
-          document.querySelector('.js-activity').appendChild(document.createTextNode(status+' '));
-          document.querySelector('.js-activity').appendChild(em);
-          document.querySelector('.js-activity').appendChild(document.createTextNode(' by '+s.artist+'. '));
-        }
-      }
-      xhr.send();
-      console.log('no peeking')
-  </script>
-  
-{{ partial "footer.html" . }}
