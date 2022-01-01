@@ -37,7 +37,7 @@ const tick = () => {
   }
   d.push(c);
   console.clear();
-  console.log("%c"+d[currentFrame], "background-color:#000; font-family:monospace; color:#fff; font-size:6px; line-height:8px; padding:0; margin:0; display:block; border:none");
+  console.log(`%c${d[currentFrame]}`, "background:#000; color:#fff; font-family:monospace; font-size:6px; line-height: 8px; display:block");
   currentFrame = (currentFrame < a.length - 1) ? currentFrame+1 : 0
 }
 tick();
