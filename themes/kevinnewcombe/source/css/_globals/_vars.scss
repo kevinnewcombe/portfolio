@@ -1,0 +1,84 @@
+/* 
+	Commonly used SCSS variables 
+	used throughout the site.
+*/
+
+// breakpoints
+$xxsmall: 320px;
+$xsmall: 480px;
+$small: 640px;
+$mid: 768px;
+$medium:960px;
+$large: 1180px;
+$xlarge: 1440px;
+
+$table-breakpoint: 768px; // media query breakpoint for tables; they stack below this
+$nav-breakpoint: 639px; // main nav goes from full to hamburger
+$tab-breakpoint:768px;
+
+/*
+ *
+ *  colors 
+ *  names via http://chir.ag/projects/name-that-color/
+ *
+ *  note: For reference when adding names, please add a short description of 
+ *  where they're commonly being used 
+ *  
+*/
+
+// primary colors
+$black:#000;
+$white:#fff;
+
+// blues
+$tory-blue:#10499E; // used for nav items and forms
+$torea-bay:#0e418d; // darker compliment color for $tory-blue
+$torea-bay-b:#0d3d85; // button hover
+$zircon: #F5F9FF; // light blue
+$zircon-light:#f3f8ff; // used for additional resources background
+$zircon-c:#fafbff; // active province selector background
+$zircon-d:#f0f6ff; // map popup background
+$zircon-e:#fafcff; // style gallery series background
+$deep-saphire:#0c3572; // used for h5s on the main body page
+$wedgewood:#597aab; // used for the .intro class in the main text body
+$madison:#0a2e63; // common h6s
+$bubbles:#e9fcff; // inner a:hover background color
+$cornflower-blue:#3464ac; // windows overview header border
+$cornflower-blue-light:#c9defe; // windows overview label ('you are viewing')
+$french-pass:#c4dbfd;
+
+//reds
+$monza:#dd0330;	// primary red
+$monza-dark:#b70228;	// primary red offset
+$amanranth:#e2294f;
+$sundown:#ffb2c2; // red header subtitles
+
+// greys
+$cape-cod:#4f4f4f; // secondary nav internal links
+$gallery:#ededed; // footer background
+$emperor: #4f4f4f; // primary text
+$dusty-gray:#979797; // copyright paragraph in the footer
+$silver:#b9b9b9; // input form placeholder text
+$dark-silver:#c9c9c9; // input border
+$porcelain:#F5F6F7; // carousel controls backgrounds
+$catskill-white: #e7ecf5; // inactive tab background
+$wild-sand:#F6F6F6; // alternating rows on windows page
+$silver-c:#C2C2C2;
+$silver-d:#cccccc;
+
+// tans
+$donkey-brown:#ab9d7b;  // sidenav item text, common h4s
+$pale-oyster:#9c8c7d; // sidenav item border
+$dawn-pink:#f5efe9; // sidenav background
+$makara:#85786b; // homepage third columns: flex left and right colums bg
+$squirrel:#908275; // homepage third columns: center column bg
+$kabul:#594b3a; // compare checkbox label
+
+// font families
+$proximanova: "proxima-nova",sans-serif;
+
+// font weights
+$normal:400;
+$semibold:600;
+$bold:700;
+$extrabold:800;

@@ -1,0 +1,1 @@
+- images must be 1.332 aspect ration
