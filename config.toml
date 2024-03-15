@@ -1,5 +1,0 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "Kevin Newcombe | Front-End Developer"
-theme = "kevinnewcombe"
-disableHugoGeneratorInject = true
