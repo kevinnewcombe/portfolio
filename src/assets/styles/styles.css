@@ -35,6 +35,3 @@ p {
 a.email-link:hover .top-flap-animated {
   transform: rotateX(180deg)
 }
-a:focus {
-  outline: 1px solid red;
-}
