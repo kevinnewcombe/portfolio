@@ -5,8 +5,9 @@ const eleventyPluginFilesMinifier = require("@sherby/eleventy-plugin-files-minif
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./favicon.ico"); // add favicon to the build
+  eleventyConfig.addWatchTarget("./src/assets/");
 
-	// minify css
+  // minify css
 	eleventyConfig.addFilter("cssmin", function (code) {
 		return new CleanCSS({}).minify(code).styles;
 	});
