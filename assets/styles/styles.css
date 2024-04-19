@@ -1,0 +1,40 @@
+html {
+  box-sizing: border-box;
+  font-family: work sans, sans-serif;
+  color: #000;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit
+}
+
+body {
+  margin: 0;
+  padding: 2.5rem 10px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+p {
+  margin-top: 0
+}
+
+.icons{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 10px;
+}
+
+a.email-link:hover .top-flap-animated {
+  transform: rotateX(180deg)
+}
+a:focus {
+  outline: 1px solid red;
+}
