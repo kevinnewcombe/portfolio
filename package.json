@@ -1,0 +1,28 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinnewcombe/portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinnewcombe/portfolio/issues"
+  },
+  "homepage": "https://github.com/kevinnewcombe/portfolio#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@sherby/eleventy-plugin-files-minifier": "^1.1.1"
+  },
+  "dependencies": {
+    "clean-css": "^5.3.3",
+    "html-minifier": "^4.0.0"
+  }
+}

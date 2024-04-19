@@ -1,0 +1,6 @@
+# Generated files
+package/generated*
+node_modules/
+.vscode
+_site/
+package-lock.json
