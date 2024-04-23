@@ -1,15 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 50 58" class="emailicon">
+  <title>Email me</title>
   <defs>
     <clipPath id="emailicon__clippath">
       <path d="M50 21 26.29 34.92a2 2 0 0 1-2.57 0L0 21z" />
     </clipPath>
-    <style>
-
-
-      .top-flap-animated {
-
-      }
-    </style>
   </defs>
   <mask id="emailicon__mask">
     <rect x="0" y="0" width="100%" height="100%" fill="#fff" />

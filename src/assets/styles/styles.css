@@ -1,10 +1,10 @@
 :root{
-  --color-page-bg: #222;
+  --color-page-bg: #2e3035;
   --color-page-text: #fff;
   --color-github:#fff;
   --color-mail: #fff;
-  --knlogo-back: #808080;
-  --knlogo-front: #fff;
+  --knlogo-back: #00dcdc;
+  --knlogo-front: #ff3232;
 }
 
 @media(prefers-color-scheme: light){
@@ -35,7 +35,7 @@ html {
 
 body {
   margin: 0;
-  padding: 10px;
+  padding: 25px 10px;
   height:100%;
   min-height: 100dvh;
   display: flex;
