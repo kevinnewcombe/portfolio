@@ -1,20 +1,25 @@
 :root{
   --color-page-bg: #2e3035;
   --color-page-text: #fff;
-  --color-github:#fff;
-  --color-mail: #fff;
-  --knlogo-back: #00dcdc;
-  --knlogo-front: #ff3232;
+  --color-anchor:#00dcdc;
+  --color-anchor-active:#d7ffff;
+  --color-knlogo-back: #00dcdc;
+  --color-knlogo-front: #ff3232;
+  --transition-duration: 0.25s;
 }
 
 @media(prefers-color-scheme: light){
   :root{
     --color-page-bg: #fff;
     --color-page-text: #222;
-    --color-github:#24292f;
-    --color-mail: #2f2f2f;
-    --knlogo-back: #00dcdc;
-    --knlogo-front: #ff3232;
+    --color-anchor:#008484;
+    --color-anchor-active:#007474;
+  }
+}
+
+@media(prefers-reduced-motion: reduce){
+  :root{
+    --transition-duration: 0s;
   }
 }
 
@@ -48,44 +53,38 @@ main{
   max-width: 400px;
 }
 
-p {
-  margin-top: 0
+h3 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin: 5px 0 30px;
 }
 
-.icons{
+.links{
   display: flex;
   justify-content: center;
   align-items: baseline;
-  gap: 10px;
+  gap: 12px;
+  flex-wrap:wrap;
 }
-
-.githublogo{
-  fill:var(--color-github)
+a{
+  text-decoration: none;
 }
-
+a:link, a:visited {
+  transition: color var(--transition-duration);
+  color: var(--color-anchor);
+}
+a:hover, a:focus{
+  color: var(--color-anchor-active);
+  /* text-decoration: underline; */
+}
 .knlogo__path {
   opacity: .7;
 }
 .knlogo__back{
-  fill: var(--knlogo-back);
+  fill: var(--color-knlogo-back);
 }
 
 .knlogo__front {
-  fill: var(--knlogo-front);
-}
-
-.emailicon__flap{
-  perspective: 1000px;
-  transform-origin: 50% 22px;
-  transition-duration: .33s
-}
-
-.emailicon:hover .emailicon__flap,
-.emailicon:focus .emailicon__flap{
-  transform: rotateX(180deg)
-}
-
-.emailicon__stroke{
-  fill: var(--color-mail);
+  fill: var(--color-knlogo-front);
 }
 
