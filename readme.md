@@ -1,5 +1,5 @@
 # kevin-newcombe.com
-'Coming eventually' page built in [eleventy](https://www.11ty.dev). Deploys from Netlify.
+Archived 'Coming eventually' page built in [eleventy](https://www.11ty.dev). Deployed from Netlify.
 
 ## Scripts
 * Install dependencies: `npm install`
